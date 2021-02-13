@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+// Home page route
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+
+// Show list of products
+Route::post('/products/list', [App\Http\Controllers\ProductController::class, 'list']);
+
+// Show list of categories
+Route::post('/categories/list', [App\Http\Controllers\CategoryController::class, 'list']);

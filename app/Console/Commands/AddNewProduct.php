@@ -51,6 +51,8 @@ class AddNewProduct extends Command
 
         $productCategoryId = null;
 
+        // User can create a new category and the category will be assigned to product automatically
+        // Otherwise the user must provide the category ID
         if ($this->confirm('Do you want to Create a product category first?')) {
             $productCategoryId = $this->createProductCategory();
         }
@@ -80,6 +82,8 @@ class AddNewProduct extends Command
             foreach ($validator->errors()->all() as $error) {
                 $this->error($error);
             }
+
+            // When there was an Error start over by calling the same method
             return $this->createProductCategory();
         }
 
@@ -109,7 +113,8 @@ class AddNewProduct extends Command
         $fields['price'] = $price;
         $fields['image'] = $imageURL;
 
-        $fieldsRules['name']    = ['required', 'min:3', 'max:32'];
+        $fieldsRules['name']    = ['required', 'min:2', 'max:32'];
+        $fieldsRules['description']    = ['required'];
         $fieldsRules['price']    = ['required', 'integer', 'min:1'];
         $fieldsRules['image']    = ['required'];
 
@@ -121,6 +126,8 @@ class AddNewProduct extends Command
             foreach ($validator->errors()->all() as $error) {
                 $this->error($error);
             }
+
+            // When there was an Error start over by calling the same method
             return $this->createProduct( $productCategory );
         }
 

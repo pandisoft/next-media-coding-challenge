@@ -1,16 +1,20 @@
-## next-media-coding-challenge
-Next media coding challenge project built using Laravel 8 and Vuejs 2 and tailwindcss
+# next-media-coding-challenge
+Next media coding challenge project built using Laravel 8 and Vuejs 2 and Tailwind css
 
-## Install
-Clone or download the project 
-```sh
-composer install
-```
-or
+# Live demo 
+https://nextmedia.pandisoft.com/
 
-```sh
-composer install --optimize-autoloader --no-dev
-```
+# Installation
+* Clone or download the project 
+
+* Run the following command to install vendors
+    ```sh
+    composer install
+    ```
+* Run the migration
+     ```sh
+    php artisan migrate
+    ```
 
 # Create dummy data
 Run the following command to insert dummy data for testing, the database seeder will create 5 categories and 25 product for each category 

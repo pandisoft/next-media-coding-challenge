@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
 
             // Description can contain long text or HTML so we may change it to text() instead
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
 
             $table->float('price');
             $table->string('image');

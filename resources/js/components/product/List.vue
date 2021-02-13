@@ -1,5 +1,5 @@
 <template>
-  <div class="product-list">
+  <div class="product-list mb-8">
     <div class="container mx-auto px-6">
       <h3 class="text-gray-700 text-1xl font-medium">
         NextMedia awesome products
@@ -44,7 +44,7 @@
                   v-model="filterBy.productCategory"
                   class="appearance-none h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500"
                 >
-                  <option disabled selected value="all">All Categories</option>
+                  <option selected value="all">All Categories</option>
                   <option
                     v-for="(category, index) in categories"
                     v-bind:key="index"
@@ -102,9 +102,11 @@
               :product="product"
             ></single>
           </div>
-
+          
           <nm-preloader v-if="isLoadingMore" />
-          <div v-else>
+          
+          <div v-else class="text-center my-8">
+            <div class="mt-3 text-sm text-gray-500">{{ totalProducts }} Products, {{ products.length }} shown</div>
             <div
               class="inline-flex mt-2 xs:mt-0"
               v-if="nextPage && products.length">

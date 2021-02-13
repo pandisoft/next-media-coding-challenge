@@ -110,6 +110,7 @@ class AddNewProduct extends Command
         }
     
         $fields['name'] = $name;
+        $fields['description'] = $description;
         $fields['price'] = $price;
         $fields['image'] = $imageURL;
 

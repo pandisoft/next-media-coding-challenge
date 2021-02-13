@@ -1972,6 +1972,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -38079,7 +38081,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "product-list" }, [
+  return _c("div", { staticClass: "product-list mb-8" }, [
     _c(
       "div",
       { staticClass: "container mx-auto px-6" },
@@ -38233,9 +38235,7 @@ var render = function() {
                       [
                         _c(
                           "option",
-                          {
-                            attrs: { disabled: "", selected: "", value: "all" }
-                          },
+                          { attrs: { selected: "", value: "all" } },
                           [_vm._v("All Categories")]
                         ),
                         _vm._v(" "),
@@ -38350,7 +38350,20 @@ var render = function() {
                         _vm._v(" "),
                         _vm.isLoadingMore
                           ? _c("nm-preloader")
-                          : _c("div", [
+                          : _c("div", { staticClass: "text-center my-8" }, [
+                              _c(
+                                "div",
+                                { staticClass: "mt-3 text-sm text-gray-500" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.totalProducts) +
+                                      " Products, " +
+                                      _vm._s(_vm.products.length) +
+                                      " shown"
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
                               _vm.nextPage && _vm.products.length
                                 ? _c(
                                     "div",
@@ -38490,7 +38503,7 @@ var render = function() {
         _c("p", { attrs: { itemprop: "description" } }, [
           _vm._v(
             "\r\n            " +
-              _vm._s(_vm.product.description) +
+              _vm._s(_vm.product.short_description) +
               "\r\n            "
           ),
           _c("span", { staticClass: "block", attrs: { itemprop: "sku" } }, [

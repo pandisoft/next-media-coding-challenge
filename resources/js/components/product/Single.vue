@@ -10,7 +10,7 @@
         <h3 class="text-gray-700 uppercase" itemprop="name">{{ product.name }}</h3>
         <span class="text-gray-500 mt-2" itemprop="price">{{ product.price }}</span>
         <p itemprop="description">
-            {{ product.description }}
+            {{ product.short_description }}
             <span itemprop="sku" class="block">SKU #{{ product.id}}</span>
         </p>
     </div>

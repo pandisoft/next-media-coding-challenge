@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 
 class Product extends Model
 {
@@ -46,6 +47,7 @@ class Product extends Model
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
+            'short_description' => str::limit($this->description, 62),
             'price' => sprintf('%s %s', number_format($this->price, 2), $this->currency),
             'image' => $this->image,
             'categories' => $this->categories->map->format(),

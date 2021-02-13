@@ -45,6 +45,7 @@ class Product extends Model
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'description' => $this->description,
             'price' => sprintf('%s %s', number_format($this->price, 2), $this->currency),
             'image' => $this->image,
             'categories' => $this->categories->map->format(),

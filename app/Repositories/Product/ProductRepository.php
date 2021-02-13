@@ -31,7 +31,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
     public function getPaginate(int $limit = 20, $orderField = 'id', $orderDirection = "desc", $category = 'all')
     {   
         // Get list of products
-        $products = $this->model->select('id', 'name', 'price', 'image')
+        $products = $this->model->select('id', 'description', 'name', 'price', 'image')
             ->orderBy($orderField, $orderDirection);
 
             if( $category != 'all'){

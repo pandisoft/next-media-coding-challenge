@@ -5,15 +5,15 @@
         <nav class="bg-white shadow-lg mb-8">
             <div class="md:flex items-center justify-between container mx-auto">
                 <div class="flex justify-between items-center">
-                    <div class="text-2xl font-bold text-gray-600 md:text-3xl p-5">
-                        <a href="#">NextMedia Coding challenge</a>
+                    <div class="font-bold text-gray-600 md:text-2xl p-5">
+                        <a href="#">Coding challenge</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
     <main class="main container mx-auto">
-        
+        <nm-product-list></nm-product-list>
     </main>
 </div>
 @endsection

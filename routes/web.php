@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // Home page route
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
 
 // Show list of products
 Route::post('/products/list', [App\Http\Controllers\ProductController::class, 'list']);
